@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PixelPerfectToys | Anime Figures</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
   <style>
     *{margin:0;padding:0;box-sizing:border-box;}
+
     body{
       font-family:"Poppins",sans-serif;
       background:linear-gradient(-45deg,#ffe6f4,#fce6ff,#ffe9f0,#ffdff6);
@@ -22,6 +26,7 @@
     }
 
     .container{max-width:1200px;margin:0 auto;padding:0 18px;}
+
     header{
       position:sticky;top:0;z-index:100;
       background:rgba(255,255,255,.96);
@@ -43,7 +48,7 @@
       font-size:11px;letter-spacing:.22em;text-transform:uppercase;
       color:#a0aec0;margin-top:2px;
     }
-    .header-right{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+    .header-right{display:flex;align-items:center;gap:8px;}
     .pill-pattern{
       font-size:11px;letter-spacing:.25em;text-transform:uppercase;
       color:#c53078;padding:6px 14px;border-radius:999px;
@@ -58,16 +63,6 @@
       background:#ff4b8b;border-color:#ff4b8b;color:#fff;
       transform:translateY(-1px);
       box-shadow:0 6px 18px rgba(255,75,139,.35);
-    }
-    .social-btn.x-btn {
-      background: linear-gradient(90deg, #000000, #1d9bf0);
-      border-color: #1d9bf0;
-      color: white;
-    }
-    .social-btn.x-btn:hover {
-      background: linear-gradient(90deg, #1d9bf0, #000000);
-      border-color: #1d9bf0;
-      box-shadow: 0 6px 18px rgba(29, 155, 240, .35);
     }
 
     .hero{padding:46px 0 32px;text-align:center;}
@@ -107,7 +102,6 @@
       display:flex;flex-direction:column;cursor:pointer;
       transition:transform .25s ease,box-shadow .25s ease,border .25s ease;
       border:1px solid #f2e8f7;
-      position: relative;
     }
     .product-card:hover{
       transform:translateY(-6px);
@@ -123,29 +117,6 @@
       object-fit:cover;transition:transform .4s ease;
     }
     .product-card:hover .product-image-wrap img{transform:scale(1.05);}
-    
-    /* NEW BADGE */
-    .new-badge {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: linear-gradient(45deg, #ff6b9d, #ff8fb2);
-      color: white;
-      padding: 4px 10px;
-      border-radius: 12px;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      box-shadow: 0 4px 12px rgba(255, 107, 157, .4);
-      z-index: 2;
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-    }
-    
     .product-info{
       padding:14px 16px 16px;display:flex;flex-direction:column;gap:8px;
     }
@@ -169,6 +140,7 @@
       opacity:.95;
     }
 
+    /* MODAL */
     .modal{
       display:none;position:fixed;inset:0;
       background:rgba(15,23,42,.86);
@@ -233,12 +205,13 @@
 
     @media(max-width:768px){
       .header-inner{flex-direction:column;align-items:flex-start;gap:8px;}
-      .header-right{align-self:stretch;justify-content:flex-end;flex-direction:column;width:100%;gap:6px;}
+      .header-right{align-self:stretch;justify-content:flex-end;}
       .hero-title{font-size:26px;}
     }
   </style>
 </head>
 <body>
+
   <header>
     <div class="container">
       <div class="header-inner">
@@ -250,7 +223,6 @@
           <div class="pill-pattern">• curated • limited • select •</div>
           <a href="https://www.instagram.com/pixelperfecttoys/" target="_blank" class="social-btn">Instagram</a>
           <a href="https://www.pinterest.com/pixelperfecttoys/" target="_blank" class="social-btn">Pinterest</a>
-          <a href="https://x.com/pixelperfecttoy" target="_blank" class="social-btn x-btn">X.com</a>
         </div>
       </div>
     </div>
@@ -277,10 +249,12 @@
     </p>
   </section>
 
+  <!-- PRODUCTS GRID -->
   <section class="container">
     <div id="productsGrid" class="grid"></div>
   </section>
 
+  <!-- PREVIEW MODAL -->
   <div id="previewModal" class="modal">
     <div class="modal-inner">
       <button class="modal-close" onclick="closePreview()">×</button>
@@ -303,22 +277,50 @@
         <div class="footer-pattern">• affiliate • note •</div>
         <p class="footer-text">
           As an Amazon Associate, qualifying purchases made through the links on this site may generate a commission, at no additional cost to you.
-          © pixelperfecttoys 2026
         </p>
       </div>
     </div>
   </footer>
 
   <script>
-    // ALL PRODUCTS - NEW FORMAT (addedDate add karo new products me)
+    // ---------- Modal preview ----------
+    function openPreview(imageUrl, title, amazonLink) {
+      const img = document.getElementById("previewImage");
+      const titleEl = document.getElementById("previewTitle");
+      const btn = document.getElementById("previewButton");
+      const modal = document.getElementById("previewModal");
+
+      img.src = imageUrl;
+      img.alt = title;
+      titleEl.textContent = title;
+      btn.href = amazonLink;
+
+      modal.style.display = "flex";
+      document.body.style.overflow = "hidden";
+    }
+
+    function closePreview() {
+      const modal = document.getElementById("previewModal");
+      modal.style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+
+    window.addEventListener("click", function (e) {
+      const modal = document.getElementById("previewModal");
+      if (e.target === modal) closePreview();
+    });
+
+    window.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closePreview();
+    });
+
+    // ---------- All products ----------
     const baseProducts = [
-      // EXAMPLE NEW PRODUCT (45 days tak NEW rahega)
       {
         name: "Raiden Shogun Nendoroid Action Figure",
         image: "https://i.imgur.com/w8L0nVv.jpeg",
         link: "https://amzn.to/48DQb4v",
-        meta: "CHARACTER • DETAIL SCULPT",
-        addedDate: "2026-01-07"
+        meta: "CHARACTER • DETAIL SCULPT"
       },
       {
         name: "Venti Nendoroid Action Figure, Multicolor",
@@ -421,108 +423,19 @@
         image: "https://i.imgur.com/w9DduQf.jpeg",
         link: "https://amzn.to/3L7bK4m",
         meta: "ACCESSORY • CONTROLLER"
-      },
-  {
-    name: "Furina Mini Figure PVC 4.7in Anime Game Character Desktop Car Spring Ornaments Gift",
-    image: "https://i.imgur.com/yg8lDJz.jpeg",
-    link: "https://amzn.to/4jqCFVw",
-    meta: "MINI • FURINA",
-    addedDate: "2026-01-07"
-  },
-  {
-    name: "Focalors Furina wig for genshin game Hair white and blue Wig With Wig cap",
-    image: "https://i.imgur.com/uu90BCR.jpeg",
-    link: "https://amzn.to/49rGfdB",
-    meta: "COSPLAY • WIG",
-    addedDate: "2026-01-07"
-  },
-  {
-    name: "GENSHIN IMPACT Springy Hu Tao Chibi Figure",
-    image: "https://i.imgur.com/2Kb7zFg.jpeg",
-    link: "https://amzn.to/3YtgrZl",
-    meta: "CHIBI • HU TAO",
-    addedDate: "2026-01-07"
-  },
-  {
-    name: "GENSHIN IMPACT of Lush Forests and Flying Sand Alhaitham Impression Series Shirt",
-    image: "https://i.imgur.com/2q9XkNt.jpeg",
-    link: "https://amzn.to/45HKS1P",
-    meta: "MERCH • SHIRT",
-    addedDate: "2026-01-07"
-  },
-  {
-    name: "Cosplay Life Anime Pullover Hoodie - Halloween Unisex Adult Manga Sweater Merch Kangaroo Pockets",
-    image: "https://i.imgur.com/BEkqj2G.jpeg",
-    link: "https://amzn.to/49aLRdh",
-    meta: "HOODIE • COSPLAY",
-    addedDate: "2026-01-07"
-  },
-  {
-    name: "Good Smile Genshin Impact: Traveler (Lumine) Nendoroid Action Figure, Multicolor, (G12625)",
-    image: "https://i.imgur.com/oJWfgcp.jpeg",
-    link: "https://amzn.to/4qNmkNj",
-    meta: "NENDOROID • LUMINE",
-    addedDate: "2026-01-07"
-  },
-  {
-    name: "Good Smile Genshin Impact: Traveler (Aether) Nendoroid Action Figure, Multicolor, (G12626)",
-    image: "https://i.imgur.com/u4EWvaf.jpeg",
-    link: "https://amzn.to/4q3xBZI",
-    meta: "NENDOROID • AETHER",
-    addedDate: "2026-01-07"
-  }
+      }
     ];
 
-    // Check if product is NEW (45 days)
-    function isNewProduct(product) {
-      if (!product.addedDate) return false;
-      const addedDate = new Date(product.addedDate);
-      const now = new Date();
-      const daysDiff = (now - addedDate) / (1000 * 60 * 60 * 24);
-      return daysDiff <= 45;
-    }
+    const grid = document.getElementById("productsGrid");
 
-    // Sort: NEW products first
-    function sortProducts(products) {
-      return products.sort((a, b) => {
-        const aIsNew = isNewProduct(a);
-        const bIsNew = isNewProduct(b);
-        if (aIsNew && !bIsNew) return -1;
-        if (!aIsNew && bIsNew) return 1;
-        return 0;
-      });
-    }
-
-    // Modal functions
-    function openPreview(imageUrl, title, amazonLink) {
-      const img = document.getElementById("previewImage");
-      const titleEl = document.getElementById("previewTitle");
-      const btn = document.getElementById("previewButton");
-      const modal = document.getElementById("previewModal");
-
-      img.src = imageUrl;
-      img.alt = title;
-      titleEl.textContent = title;
-      btn.href = amazonLink;
-
-      modal.style.display = "flex";
-      document.body.style.overflow = "hidden";
-    }
-
-    function closePreview() {
-      const modal = document.getElementById("previewModal");
-      modal.style.display = "none";
-      document.body.style.overflow = "auto";
-    }
-
-    // Render single product card
     function renderProductCard(product) {
       const { name, image, link, meta } = product;
-      const isNew = isNewProduct(product);
 
       const card = document.createElement("div");
       card.className = "product-card";
-      card.onclick = function () { openPreview(image, name, link); };
+      card.onclick = function () {
+        openPreview(image, name, link);
+      };
 
       const imgWrap = document.createElement("div");
       imgWrap.className = "product-image-wrap";
@@ -530,15 +443,6 @@
       const img = document.createElement("img");
       img.src = image;
       img.alt = name;
-      
-      // NEW BADGE
-      if (isNew) {
-        const newBadge = document.createElement("div");
-        newBadge.className = "new-badge";
-        newBadge.textContent = "NEW";
-        imgWrap.appendChild(newBadge);
-      }
-      
       imgWrap.appendChild(img);
 
       const info = document.createElement("div");
@@ -565,14 +469,12 @@
       card.appendChild(imgWrap);
       card.appendChild(info);
 
-      return card;
+      grid.appendChild(card);
     }
 
-    // Load all products
-    function loadProducts() {
-      const grid = document.getElementById("productsGrid");
-      grid.innerHTML = "";
-      
-      const sortedProducts = sortProducts([...baseProducts]);
-      sortedProducts.forEach(product => {
-        grid.appendChild(renderProductCard(p
+    // ---------- Initial load ----------
+    grid.innerHTML = "";
+    baseProducts.forEach(renderProductCard);
+  </script>
+</body>
+</html>
