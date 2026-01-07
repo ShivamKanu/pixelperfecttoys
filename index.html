@@ -1,217 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PixelPerfectToys | Anime Figures</title>
-
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-
   <style>
     *{margin:0;padding:0;box-sizing:border-box;}
-
-    body{
-      font-family:"Poppins",sans-serif;
-      background:linear-gradient(-45deg,#ffe6f4,#fce6ff,#ffe9f0,#ffdff6);
-      background-size:400% 400%;
-      animation:bgShift 18s ease infinite;
-      min-height:100vh;
-      color:#2d3748;
-    }
-    @keyframes bgShift{
-      0%{background-position:0% 50%}
-      50%{background-position:100% 50%}
-      100%{background-position:0% 50%}
-    }
-
+    body{font-family:"Poppins",sans-serif;background:linear-gradient(-45deg,#ffe6f4,#fce6ff,#ffe9f0,#ffdff6);background-size:400% 400%;animation:bgShift 18s ease infinite;min-height:100vh;color:#2d3748;}
+    @keyframes bgShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
     .container{max-width:1200px;margin:0 auto;padding:0 18px;}
-
-    header{
-      position:sticky;top:0;z-index:100;
-      background:rgba(255,255,255,.96);
-      backdrop-filter:blur(18px);
-      border-bottom:2px solid #f5b1d8;
-    }
-    .header-inner{
-      display:flex;align-items:center;justify-content:space-between;
-      padding:14px 0;
-    }
+    header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(18px);border-bottom:2px solid #f5b1d8;}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0;}
     .logo-wrap{display:flex;flex-direction:column;}
-    .logo{
-      font-size:26px;font-weight:800;letter-spacing:.04em;
-      background:linear-gradient(90deg,#ff4b8b,#ff7aa2);
-      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-      text-transform:uppercase;
-    }
-    .logo-sub{
-      font-size:11px;letter-spacing:.22em;text-transform:uppercase;
-      color:#a0aec0;margin-top:2px;
-    }
-    .header-right{display:flex;align-items:center;gap:8px;}
-    .pill-pattern{
-      font-size:11px;letter-spacing:.25em;text-transform:uppercase;
-      color:#c53078;padding:6px 14px;border-radius:999px;
-      border:1px solid #f8b4d9;background:#fff7fb;
-    }
-    .social-btn{
-      padding:8px 14px;font-size:13px;border-radius:999px;
-      border:1px solid #e2e8f0;background:#fff;color:#4a5568;
-      text-decoration:none;font-weight:500;transition:all .25s ease;
-    }
-    .social-btn:hover{
-      background:#ff4b8b;border-color:#ff4b8b;color:#fff;
-      transform:translateY(-1px);
-      box-shadow:0 6px 18px rgba(255,75,139,.35);
-    }
-
+    .logo{font-size:26px;font-weight:800;letter-spacing:.04em;background:linear-gradient(90deg,#ff4b8b,#ff7aa2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-transform:uppercase;}
+    .logo-sub{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#a0aec0;margin-top:2px;}
+    .header-right{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+    .pill-pattern{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:#c53078;padding:6px 14px;border-radius:999px;border:1px solid #f8b4d9;background:#fff7fb;}
+    .social-btn{padding:8px 14px;font-size:13px;border-radius:999px;border:1px solid #e2e8f0;background:#fff;color:#4a5568;text-decoration:none;font-weight:500;transition:all .25s ease;}
+    .social-btn:hover{background:#ff4b8b;border-color:#ff4b8b;color:#fff;transform:translateY(-1px);box-shadow:0 6px 18px rgba(255,75,139,.35);}
+    .social-btn.x-btn{background:linear-gradient(90deg,#000000,#1d9bf0);border-color:#1d9bf0;color:white;}
+    .social-btn.x-btn:hover{background:linear-gradient(90deg,#1d9bf0,#000000);border-color:#1d9bf0;box-shadow:0 6px 18px rgba(29,155,240,.35);}
     .hero{padding:46px 0 32px;text-align:center;}
-    .hero-accent{
-      font-size:14px;letter-spacing:.25em;text-transform:uppercase;
-      color:#a855f7;margin-bottom:6px;
-    }
+    .hero-accent{font-size:14px;letter-spacing:.25em;text-transform:uppercase;color:#a855f7;margin-bottom:6px;}
     .hero-title{font-size:32px;font-weight:800;letter-spacing:.03em;margin-bottom:10px;}
-    .hero-badge{
-      display:inline-block;padding:6px 16px;border-radius:999px;
-      border:1px solid #f7b6de;background:#fff7fb;
-      font-size:11px;letter-spacing:.2em;text-transform:uppercase;
-      color:#c53078;margin-bottom:14px;
-    }
-    .hero-sub{
-      font-size:15px;color:#4a5568;max-width:520px;margin:0 auto;
-    }
-
+    .hero-badge{display:inline-block;padding:6px 16px;border-radius:999px;border:1px solid #f7b6de;background:#fff7fb;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#c53078;margin-bottom:14px;}
+    .hero-sub{font-size:15px;color:#4a5568;max-width:520px;margin:0 auto;}
     .section-heading{text-align:center;margin:26px 0 12px;}
-    .section-label{
-      font-size:11px;letter-spacing:.25em;text-transform:uppercase;
-      color:#c53078;margin-bottom:6px;
-    }
+    .section-label{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:#c53078;margin-bottom:6px;}
     .section-title{font-size:20px;font-weight:600;}
-    .section-note{
-      text-align:center;font-size:13px;color:#718096;margin-bottom:26px;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:20px;padding-bottom:48px;
-    }
-    .product-card{
-      background:#fff;border-radius:18px;overflow:hidden;
-      box-shadow:0 14px 30px rgba(0,0,0,.08);
-      display:flex;flex-direction:column;cursor:pointer;
-      transition:transform .25s ease,box-shadow .25s ease,border .25s ease;
-      border:1px solid #f2e8f7;
-    }
-    .product-card:hover{
-      transform:translateY(-6px);
-      box-shadow:0 18px 40px rgba(0,0,0,.15);
-      border-color:#f8b4d9;
-    }
-    .product-image-wrap{
-      position:relative;width:100%;padding-top:115%;
-      overflow:hidden;background:#f7fafc;
-    }
-    .product-image-wrap img{
-      position:absolute;inset:0;width:100%;height:100%;
-      object-fit:cover;transition:transform .4s ease;
-    }
+    .section-note{text-align:center;font-size:13px;color:#718096;margin-bottom:26px;}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;padding-bottom:48px;}
+    .product-card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 14px 30px rgba(0,0,0,.08);display:flex;flex-direction:column;cursor:pointer;transition:transform .25s ease,box-shadow .25s ease,border .25s ease;border:1px solid #f2e8f7;position:relative;}
+    .product-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,.15);border-color:#f8b4d9;}
+    .product-image-wrap{position:relative;width:100%;padding-top:115%;overflow:hidden;background:#f7fafc;}
+    .product-image-wrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}
     .product-card:hover .product-image-wrap img{transform:scale(1.05);}
-    .product-info{
-      padding:14px 16px 16px;display:flex;flex-direction:column;gap:8px;
-    }
+    .new-badge{position:absolute;top:12px;right:12px;background:linear-gradient(45deg,#ff6b9d,#ff8fb2);color:white;padding:4px 10px;border-radius:12px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;box-shadow:0 4px 12px rgba(255,107,157,.4);z-index:2;animation:pulse 2s infinite;}
+    @keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.05);}}
+    .product-info{padding:14px 16px 16px;display:flex;flex-direction:column;gap:8px;}
     .product-title{font-size:14px;font-weight:600;min-height:38px;}
-    .product-meta{
-      font-size:11px;text-transform:uppercase;letter-spacing:.18em;
-      color:#a0aec0;
-    }
-    .product-btn{
-      margin-top:8px;display:inline-flex;align-items:center;justify-content:center;
-      width:100%;padding:10px 14px;border-radius:999px;border:none;
-      background:linear-gradient(90deg,#ff4b8b,#ff7aa2);
-      color:#fff;font-size:12px;font-weight:600;
-      letter-spacing:.13em;text-transform:uppercase;
-      text-decoration:none;cursor:pointer;
-      transition:transform .2s ease,box-shadow .2s ease,opacity .2s ease;
-    }
-    .product-btn:hover{
-      transform:translateY(-1px);
-      box-shadow:0 10px 24px rgba(255,75,139,.4);
-      opacity:.95;
-    }
-
-    /* MODAL */
-    .modal{
-      display:none;position:fixed;inset:0;
-      background:rgba(15,23,42,.86);
-      backdrop-filter:blur(12px);z-index:200;
-      align-items:center;justify-content:center;padding:16px;
-    }
-    .modal-inner{
-      background:#fff;border-radius:22px;
-      max-width:520px;width:100%;
-      padding:18px 18px 22px;
-      box-shadow:0 26px 60px rgba(0,0,0,.45);
-      position:relative;
-      animation:modalIn .22s ease-out;
-    }
-    @keyframes modalIn{
-      from{opacity:0;transform:translateY(14px) scale(.97);}
-      to{opacity:1;transform:translateY(0) scale(1);}
-    }
-    .modal-close{
-      position:absolute;top:10px;right:12px;
-      width:26px;height:26px;border-radius:999px;
-      border:1px solid #e2e8f0;display:flex;
-      align-items:center;justify-content:center;
-      font-size:16px;color:#718096;cursor:pointer;
-      background:#fff;transition:all .2s ease;
-    }
-    .modal-close:hover{
-      background:#ffedf6;border-color:#f8b4d9;color:#c53078;
-    }
-    .modal-image-wrap{
-      width:100%;border-radius:16px;overflow:hidden;
-      background:#f7fafc;margin-bottom:14px;
-    }
+    .product-meta{font-size:11px;text-transform:uppercase;letter-spacing:.18em;color:#a0aec0;}
+    .product-btn{margin-top:8px;display:inline-flex;align-items:center;justify-content:center;width:100%;padding:10px 14px;border-radius:999px;border:none;background:linear-gradient(90deg,#ff4b8b,#ff7aa2);color:#fff;font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease,opacity .2s ease;}
+    .product-btn:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(255,75,139,.4);opacity:.95;}
+    .modal{display:none;position:fixed;inset:0;background:rgba(15,23,42,.86);backdrop-filter:blur(12px);z-index:200;align-items:center;justify-content:center;padding:16px;}
+    .modal-inner{background:#fff;border-radius:22px;max-width:520px;width:100%;padding:18px 18px 22px;box-shadow:0 26px 60px rgba(0,0,0,.45);position:relative;animation:modalIn .22s ease-out;}
+    @keyframes modalIn{from{opacity:0;transform:translateY(14px) scale(.97);}to{opacity:1;transform:translateY(0) scale(1);}}
+    .modal-close{position:absolute;top:10px;right:12px;width:26px;height:26px;border-radius:999px;border:1px solid #e2e8f0;display:flex;align-items:center;justify-content:center;font-size:16px;color:#718096;cursor:pointer;background:#fff;transition:all .2s ease;}
+    .modal-close:hover{background:#ffedf6;border-color:#f8b4d9;color:#c53078;}
+    .modal-image-wrap{width:100%;border-radius:16px;overflow:hidden;background:#f7fafc;margin-bottom:14px;}
     .modal-image-wrap img{width:100%;height:auto;display:block;object-fit:cover;}
     .modal-title{font-size:18px;font-weight:600;margin-bottom:12px;}
     .modal-note{font-size:12px;color:#718096;margin-bottom:16px;}
-    .modal-btn{
-      width:100%;padding:11px 16px;border-radius:999px;border:none;
-      background:linear-gradient(90deg,#ff4b8b,#ff7aa2);
-      color:#fff;font-size:13px;font-weight:600;
-      letter-spacing:.16em;text-transform:uppercase;
-      cursor:pointer;text-decoration:none;
-      display:inline-flex;align-items:center;justify-content:center;
-      transition:transform .2s ease,box-shadow .2s ease,opacity .2s ease;
-    }
-    .modal-btn:hover{
-      transform:translateY(-1px);
-      box-shadow:0 12px 26px rgba(255,75,139,.45);
-      opacity:.96;
-    }
-
-    footer{
-      background:#111827;color:#e5e7eb;
-      padding:20px 0 26px;font-size:12px;margin-top:12px;
-    }
+    .modal-btn{width:100%;padding:11px 16px;border-radius:999px;border:none;background:linear-gradient(90deg,#ff4b8b,#ff7aa2);color:#fff;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;transition:transform .2s ease,box-shadow .2s ease,opacity .2s ease;}
+    .modal-btn:hover{transform:translateY(-1px);box-shadow:0 12px 26px rgba(255,75,139,.45);opacity:.96;}
+    footer{background:#111827;color:#e5e7eb;padding:20px 0 26px;font-size:12px;margin-top:12px;}
     .footer-inner{text-align:center;}
-    .footer-pattern{
-      font-size:11px;letter-spacing:.28em;
-      text-transform:uppercase;color:#4b5563;margin-bottom:6px;
-    }
+    .footer-pattern{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#4b5563;margin-bottom:6px;}
     .footer-text{color:#9ca3af;max-width:520px;margin:0 auto;}
-
-    @media(max-width:768px){
-      .header-inner{flex-direction:column;align-items:flex-start;gap:8px;}
-      .header-right{align-self:stretch;justify-content:flex-end;}
-      .hero-title{font-size:26px;}
-    }
+    @media(max-width:768px){.header-inner{flex-direction:column;align-items:flex-start;gap:8px;}.header-right{align-self:stretch;justify-content:flex-end;flex-direction:column;width:100%;gap:6px;}.hero-title{font-size:26px;}}
   </style>
 </head>
 <body>
-
   <header>
     <div class="container">
       <div class="header-inner">
@@ -223,6 +73,7 @@
           <div class="pill-pattern">• curated • limited • select •</div>
           <a href="https://www.instagram.com/pixelperfecttoys/" target="_blank" class="social-btn">Instagram</a>
           <a href="https://www.pinterest.com/pixelperfecttoys/" target="_blank" class="social-btn">Pinterest</a>
+          <a href="https://x.com/pixelperfecttoy" target="_blank" class="social-btn x-btn">X.com</a>
         </div>
       </div>
     </div>
@@ -233,9 +84,7 @@
       <div class="hero-accent">ANIME FIGURES SHOWCASE</div>
       <div class="hero-title">Elegant figures for collectors.</div>
       <div class="hero-badge">PREVIEW • SELECT • SHOP</div>
-      <p class="hero-sub">
-        A small, carefully curated collection of anime figures and accessories, linked to Amazon for easy, secure purchase.
-      </p>
+      <p class="hero-sub">A small, carefully curated collection of anime figures and accessories, linked to Amazon for easy, secure purchase.</p>
     </div>
   </section>
 
@@ -244,30 +93,20 @@
       <div class="section-label">FEATURED SELECTION</div>
       <div class="section-title">Highlight pieces from the collection</div>
     </div>
-    <p class="section-note">
-      Tap any figure card to open a full preview, then continue to Amazon to view pricing, details, and availability.
-    </p>
+    <p class="section-note">Tap any figure card to open a full preview, then continue to Amazon to view pricing, details, and availability.</p>
   </section>
 
-  <!-- PRODUCTS GRID -->
   <section class="container">
     <div id="productsGrid" class="grid"></div>
   </section>
 
-  <!-- PREVIEW MODAL -->
   <div id="previewModal" class="modal">
     <div class="modal-inner">
       <button class="modal-close" onclick="closePreview()">×</button>
-      <div class="modal-image-wrap">
-        <img id="previewImage" src="" alt="" />
-      </div>
+      <div class="modal-image-wrap"><img id="previewImage" src="" alt="" /></div>
       <div id="previewTitle" class="modal-title"></div>
-      <div class="modal-note">
-        Image preview only. Use the button below to open the product on Amazon in a new tab.
-      </div>
-      <a id="previewButton" href="#" target="_blank" class="modal-btn">
-        View product on Amazon
-      </a>
+      <div class="modal-note">Image preview only. Use the button below to open the product on Amazon in a new tab.</div>
+      <a id="previewButton" href="#" target="_blank" class="modal-btn">View product on Amazon</a>
     </div>
   </div>
 
@@ -275,206 +114,80 @@
     <div class="container">
       <div class="footer-inner">
         <div class="footer-pattern">• affiliate • note •</div>
-        <p class="footer-text">
-          As an Amazon Associate, qualifying purchases made through the links on this site may generate a commission, at no additional cost to you.
-        </p>
+        <p class="footer-text">As an Amazon Associate, qualifying purchases made through the links on this site may generate a commission, at no additional cost to you. © pixelperfecttoys 2026</p>
       </div>
     </div>
   </footer>
 
   <script>
-    // ---------- Modal preview ----------
-    function openPreview(imageUrl, title, amazonLink) {
-      const img = document.getElementById("previewImage");
-      const titleEl = document.getElementById("previewTitle");
-      const btn = document.getElementById("previewButton");
-      const modal = document.getElementById("previewModal");
-
-      img.src = imageUrl;
-      img.alt = title;
-      titleEl.textContent = title;
-      btn.href = amazonLink;
-
-      modal.style.display = "flex";
-      document.body.style.overflow = "hidden";
-    }
-
-    function closePreview() {
-      const modal = document.getElementById("previewModal");
-      modal.style.display = "none";
-      document.body.style.overflow = "auto";
-    }
-
-    window.addEventListener("click", function (e) {
-      const modal = document.getElementById("previewModal");
-      if (e.target === modal) closePreview();
-    });
-
-    window.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") closePreview();
-    });
-
-    // ---------- All products ----------
     const baseProducts = [
-      {
-        name: "Raiden Shogun Nendoroid Action Figure",
-        image: "https://i.imgur.com/w8L0nVv.jpeg",
-        link: "https://amzn.to/48DQb4v",
-        meta: "CHARACTER • DETAIL SCULPT"
-      },
-      {
-        name: "Venti Nendoroid Action Figure, Multicolor",
-        image: "https://i.imgur.com/RWYIwTC.jpeg",
-        link: "https://amzn.to/4oYoRD1",
-        meta: "CHARACTER • WIND STYLE"
-      },
-      {
-        name: "Nendoroid Shirakami Fubuki",
-        image: "https://i.imgur.com/MtdLp4g.jpeg",
-        link: "https://amzn.to/4rXgvOz",
-        meta: "CHARACTER • WHITE FOX"
-      },
-      {
-        name: "Raiden Shogun Figure",
-        image: "https://i.imgur.com/4miNCCY.jpeg",
-        link: "https://amzn.to/4p5VtuE",
-        meta: "SCALE • STATIC FIGURE"
-      },
-      {
-        name: "Statue of Her Excellency, The Almighty Narukami Ogosho",
-        image: "https://i.imgur.com/ysIPDph.jpeg",
-        link: "https://amzn.to/48UPItF",
-        meta: "DISPLAY • ICONIC PIECE"
-      },
-      {
-        name: "Genshin Impact Barbara",
-        image: "https://i.imgur.com/WiTEgFX.jpeg",
-        link: "https://amzn.to/48OOkIQ",
-        meta: "CHARACTER • WATER DETAIL"
-      },
-      {
-        name: "Driving Thunder Keqing 1/7 Scale Figure",
-        image: "https://i.imgur.com/3Il32QV.jpeg",
-        link: "https://amzn.to/4pEoQoU",
-        meta: "SCALE • LIGHTNING EFFECTS"
-      },
-      {
-        name: "7 Pack Genshin Impact Keychain,for Collection and Fans",
-        image: "https://i.imgur.com/mGyVZts.jpeg",
-        link: "https://amzn.to/3YD7cps",
-        meta: "COLLECTING • KEYCHAIN"
-      },
-      {
-        name: "8Bitdo Ultimate 2.4G Wireless Controller – Chongyun Edition",
-        image: "https://i.imgur.com/ufR9ZIK.jpeg",
-        link: "https://amzn.to/3MGT6Rd",
-        meta: "ACCESSORY • CONTROLLER"
-      },
-      {
-        name: "Genshin Impact Hu Tao 1/7 Scale Figure – Fragrance in Thaw",
-        image: "https://i.imgur.com/Vx5SACu.jpeg",
-        link: "https://amzn.to/4oYFuyr",
-        meta: "SCALE • HU TAO"
-      },
-      {
-        name: "Genshin Impact Kamisato Ayaka 1/7 Scale Figure – Frostflake Heron",
-        image: "https://i.imgur.com/NbiwVQN.jpeg",
-        link: "https://amzn.to/4jhfyNj",
-        meta: "SCALE • AYAKA"
-      },
-      {
-        name: "Genshin Impact Black Gold Playing Cards",
-        image: "https://i.imgur.com/0QLP76U.jpeg",
-        link: "https://amzn.to/3MHXejZ",
-        meta: "GAME • CARD"
-      },
-      {
-        name: "Genshin Impact Cat Figurine - 3.75 Cute Anime Collectible Figure",
-        image: "https://i.imgur.com/7tOoyME.jpeg",
-        link: "https://amzn.to/44yoRSH",
-        meta: "SCALE • CAT"
-      },
-      {
-        name: "Genshin Ningguang Figure – Eclipsing Star Ver. 1/7",
-        image: "https://i.imgur.com/rSQ63FZ.jpeg",
-        link: "https://amzn.to/4pxfn2s",
-        meta: "SCALE • NINGGUANG"
-      },
-      {
-        name: "GENSHIN IMPACT Battlefield Valor Themed Series Blind Box - Mondstadt(Single Box)",
-        image: "https://i.imgur.com/ze5pTuI.jpeg",
-        link: "https://amzn.to/4aYLzHA",
-        meta: "CHARACTER • BOX"
-      },
-      {
-        name: "Adjustable Genshin Impact Bracelets Luminous Bracelet Genshin Impact Bracelets Anime Luminous Bracelet",
-        image: "https://i.imgur.com/UA0sB7f.jpeg",
-        link: "https://amzn.to/491gGzP",
-        meta: "JEWELLERY • BRACELET"
-      },
-      {
-        name: "Genshin Impact Klee Figure - Cute 1/7 Scale Klee Collectible Figurine",
-        image: "https://i.imgur.com/Eum2Cli.jpeg",
-        link: "https://amzn.to/4s7PtnB",
-        meta: "SCALE • KLEE"
-      },
-      {
-        name: "8BitDo Ultimate 2 Wireless Controller for Windows, Apple, Steam & Android, TMR Joysticks, Hall/Tactile Triggers, Motion Control,1000Hz Polling Rate -Evernight(Officially Licensed by Honkai: Star Rail)",
-        image: "https://i.imgur.com/w9DduQf.jpeg",
-        link: "https://amzn.to/3L7bK4m",
-        meta: "ACCESSORY • CONTROLLER"
-      }
+      // ALL 24 PRODUCTS - NEW ONES HAVE addedDate
+      {name:"Raiden Shogun Nendoroid Action Figure",image:"https://i.imgur.com/w8L0nVv.jpeg",link:"https://amzn.to/48DQb4v",meta:"CHARACTER • DETAIL SCULPT",addedDate:"2026-01-07"},
+      {name:"Venti Nendoroid Action Figure, Multicolor",image:"https://i.imgur.com/RWYIwTC.jpeg",link:"https://amzn.to/4oYoRD1",meta:"CHARACTER • WIND STYLE"},
+      {name:"Nendoroid Shirakami Fubuki",image:"https://i.imgur.com/MtdLp4g.jpeg",link:"https://amzn.to/4rXgvOz",meta:"CHARACTER • WHITE FOX"},
+      {name:"Raiden Shogun Figure",image:"https://i.imgur.com/4miNCCY.jpeg",link:"https://amzn.to/4p5VtuE",meta:"SCALE • STATIC FIGURE"},
+      {name:"Statue of Her Excellency, The Almighty Narukami Ogosho",image:"https://i.imgur.com/ysIPDph.jpeg",link:"https://amzn.to/48UPItF",meta:"DISPLAY • ICONIC PIECE"},
+      {name:"Genshin Impact Barbara",image:"https://i.imgur.com/WiTEgFX.jpeg",link:"https://amzn.to/48OOkIQ",meta:"CHARACTER • WATER DETAIL"},
+      {name:"Driving Thunder Keqing 1/7 Scale Figure",image:"https://i.imgur.com/3Il32QV.jpeg",link:"https://amzn.to/4pEoQoU",meta:"SCALE • LIGHTNING EFFECTS"},
+      {name:"7 Pack Genshin Impact Keychain,for Collection and Fans",image:"https://i.imgur.com/mGyVZts.jpeg",link:"https://amzn.to/3YD7cps",meta:"COLLECTING • KEYCHAIN"},
+      {name:"8Bitdo Ultimate 2.4G Wireless Controller – Chongyun Edition",image:"https://i.imgur.com/ufR9ZIK.jpeg",link:"https://amzn.to/3MGT6Rd",meta:"ACCESSORY • CONTROLLER"},
+      {name:"Genshin Impact Hu Tao 1/7 Scale Figure – Fragrance in Thaw",image:"https://i.imgur.com/Vx5SACu.jpeg",link:"https://amzn.to/4oYFuyr",meta:"SCALE • HU TAO"},
+      {name:"Genshin Impact Kamisato Ayaka 1/7 Scale Figure – Frostflake Heron",image:"https://i.imgur.com/NbiwVQN.jpeg",link:"https://amzn.to/4jhfyNj",meta:"SCALE • AYAKA"},
+      {name:"Genshin Impact Black Gold Playing Cards",image:"https://i.imgur.com/0QLP76U.jpeg",link:"https://amzn.to/3MHXejZ",meta:"GAME • CARD"},
+      {name:"Genshin Impact Cat Figurine - 3.75 Cute Anime Collectible Figure",image:"https://i.imgur.com/7tOoyME.jpeg",link:"https://amzn.to/44yoRSH",meta:"SCALE • CAT"},
+      {name:"Genshin Ningguang Figure – Eclipsing Star Ver. 1/7",image:"https://i.imgur.com/rSQ63FZ.jpeg",link:"https://amzn.to/4pxfn2s",meta:"SCALE • NINGGUANG"},
+      {name:"GENSHIN IMPACT Battlefield Valor Themed Series Blind Box - Mondstadt(Single Box)",image:"https://i.imgur.com/ze5pTuI.jpeg",link:"https://amzn.to/4aYLzHA",meta:"CHARACTER • BOX"},
+      {name:"Adjustable Genshin Impact Bracelets Luminous Bracelet Genshin Impact Bracelets Anime Luminous Bracelet",image:"https://i.imgur.com/UA0sB7f.jpeg",link:"https://amzn.to/491gGzP",meta:"JEWELLERY • BRACELET"},
+      {name:"Genshin Impact Klee Figure - Cute 1/7 Scale Klee Collectible Figurine",image:"https://i.imgur.com/Eum2Cli.jpeg",link:"https://amzn.to/4s7PtnB",meta:"SCALE • KLEE"},
+      {name:"8BitDo Ultimate 2 Wireless Controller for Windows, Apple, Steam & Android, TMR Joysticks, Hall/Tactile Triggers, Motion Control,1000Hz Polling Rate -Evernight(Officially Licensed by Honkai: Star Rail)",image:"https://i.imgur.com/w9DduQf.jpeg",link:"https://amzn.to/3L7bK4m",meta:"ACCESSORY • CONTROLLER"},
+      {name:"Furina Mini Figure PVC 4.7in Anime Game Character Desktop Car Spring Ornaments Gift",image:"https://i.imgur.com/yg8lDJz.jpeg",link:"https://amzn.to/4jqCFVw",meta:"MINI • FURINA",addedDate:"2026-01-07"},
+      {name:"Focalors Furina wig for genshin game Hair white and blue Wig With Wig cap",image:"https://i.imgur.com/uu90BCR.jpeg",link:"https://amzn.to/49rGfdB",meta:"COSPLAY • WIG",addedDate:"2026-01-07"},
+      {name:"GENSHIN IMPACT Springy Hu Tao Chibi Figure",image:"https://i.imgur.com/2Kb7zFg.jpeg",link:"https://amzn.to/3YtgrZl",meta:"CHIBI • HU TAO",addedDate:"2026-01-07"},
+      {name:"GENSHIN IMPACT of Lush Forests and Flying Sand Alhaitham Impression Series Shirt",image:"https://i.imgur.com/2q9XkNt.jpeg",link:"https://amzn.to/45HKS1P",meta:"MERCH • SHIRT",addedDate:"2026-01-07"},
+      {name:"Cosplay Life Anime Pullover Hoodie - Halloween Unisex Adult Manga Sweater Merch Kangaroo Pockets",image:"https://i.imgur.com/BEkqj2G.jpeg",link:"https://amzn.to/49aLRdh",meta:"HOODIE • COSPLAY",addedDate:"2026-01-07"},
+      {name:"Good Smile Genshin Impact: Traveler (Lumine) Nendoroid Action Figure, Multicolor, (G12625)",image:"https://i.imgur.com/oJWfgcp.jpeg",link:"https://amzn.to/4qNmkNj",meta:"NENDOROID • LUMINE",addedDate:"2026-01-07"},
+      {name:"Good Smile Genshin Impact: Traveler (Aether) Nendoroid Action Figure, Multicolor, (G12626)",image:"https://i.imgur.com/u4EWvaf.jpeg",link:"https://amzn.to/4q3xBZI",meta:"NENDOROID • AETHER",addedDate:"2026-01-07"}
     ];
 
-    const grid = document.getElementById("productsGrid");
+    function isNewProduct(product){if(!product.addedDate)return false;const addedDate=new Date(product.addedDate),now=new Date();return(now-addedDate)/(1000*60*60*24)<=45;}
+    function sortProducts(products){return products.sort((a,b)=>{const aIsNew=isNewProduct(a),bIsNew=isNewProduct(b);return aIsNew&&!bIsNew?-1:!aIsNew&&bIsNew?1:0;});}
 
-    function renderProductCard(product) {
-      const { name, image, link, meta } = product;
-
-      const card = document.createElement("div");
-      card.className = "product-card";
-      card.onclick = function () {
-        openPreview(image, name, link);
-      };
-
-      const imgWrap = document.createElement("div");
-      imgWrap.className = "product-image-wrap";
-
-      const img = document.createElement("img");
-      img.src = image;
-      img.alt = name;
-      imgWrap.appendChild(img);
-
-      const info = document.createElement("div");
-      info.className = "product-info";
-
-      const title = document.createElement("div");
-      title.className = "product-title";
-      title.textContent = name;
-
-      const metaEl = document.createElement("div");
-      metaEl.className = "product-meta";
-      metaEl.textContent = meta || "NEW • ADDED";
-
-      const btn = document.createElement("a");
-      btn.href = link;
-      btn.target = "_blank";
-      btn.className = "product-btn";
-      btn.textContent = "View on Amazon";
-
-      info.appendChild(title);
-      info.appendChild(metaEl);
-      info.appendChild(btn);
-
-      card.appendChild(imgWrap);
-      card.appendChild(info);
-
-      grid.appendChild(card);
+    function openPreview(imageUrl,title,amazonLink){
+      document.getElementById("previewImage").src=imageUrl;
+      document.getElementById("previewTitle").textContent=title;
+      document.getElementById("previewButton").href=amazonLink;
+      document.getElementById("previewModal").style.display="flex";
+      document.body.style.overflow="hidden";
     }
 
-    // ---------- Initial load ----------
-    grid.innerHTML = "";
-    baseProducts.forEach(renderProductCard);
+    function closePreview(){
+      document.getElementById("previewModal").style.display="none";
+      document.body.style.overflow="auto";
+    }
+
+    function renderProductCard(product){
+      const{ name,image,link,meta }=product,isNew=isNewProduct(product),card=document.createElement("div");
+      card.className="product-card";card.onclick=()=>openPreview(image,name,link);
+      const imgWrap=document.createElement("div");imgWrap.className="product-image-wrap";
+      const img=document.createElement("img");img.src=image;img.alt=name;
+      if(isNew){const newBadge=document.createElement("div");newBadge.className="new-badge";newBadge.textContent="NEW";imgWrap.appendChild(newBadge);}
+      imgWrap.appendChild(img);
+      const info=document.createElement("div");info.className="product-info";
+      const title=document.createElement("div");title.className="product-title";title.textContent=name;
+      const metaEl=document.createElement("div");metaEl.className="product-meta";metaEl.textContent=meta||"NEW • ADDED";
+      const btn=document.createElement("a");btn.href=link;btn.target="_blank";btn.className="product-btn";btn.textContent="View on Amazon";
+      info.appendChild(title);info.appendChild(metaEl);info.appendChild(btn);
+      card.appendChild(imgWrap);card.appendChild(info);return card;
+    }
+
+    function loadProducts(){
+      const grid=document.getElementById("productsGrid");grid.innerHTML="";
+      sortProducts([...baseProducts]).forEach(product=>grid.appendChild(renderProductCard(product)));
+    }
+
+    loadProducts();setInterval(loadProducts,60*60*1000);
+    window.addEventListener("click",e=>{e.target.id==="previewModal"&&closePreview()});
+    window.addEventListener("keydown",e=>{e.key==="Escape"&&closePreview()});
   </script>
 </body>
 </html>
