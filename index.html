@@ -21,28 +21,23 @@
     .social-btn:hover{background:#ff4b8b;border-color:#ff4b8b;color:#fff;transform:translateY(-1px);box-shadow:0 6px 18px rgba(255,75,139,.35);}
     .social-btn.x-btn{background:linear-gradient(90deg,#000000,#1d9bf0);border-color:#1d9bf0;color:white;}
     .social-btn.x-btn:hover{background:linear-gradient(90deg,#1d9bf0,#000000);border-color:#1d9bf0;box-shadow:0 6px 18px rgba(29,155,240,.35);}
-    
     .hero{padding:46px 0 32px;text-align:center;}
     .hero-accent{font-size:14px;letter-spacing:.25em;text-transform:uppercase;color:#a855f7;margin-bottom:6px;}
     .hero-title{font-size:32px;font-weight:800;letter-spacing:.03em;margin-bottom:10px;}
     .hero-badge{display:inline-block;padding:6px 16px;border-radius:999px;border:1px solid #f7b6de;background:#fff7fb;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#c53078;margin-bottom:14px;}
     .hero-sub{font-size:15px;color:#4a5568;max-width:520px;margin:0 auto;}
-    
     .section-heading{text-align:center;margin:26px 0 12px;}
     .section-label{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:#c53078;margin-bottom:6px;}
     .section-title{font-size:20px;font-weight:600;}
     .section-note{text-align:center;font-size:13px;color:#718096;margin-bottom:26px;}
-    
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;padding-bottom:48px;}
     .product-card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 14px 30px rgba(0,0,0,.08);display:flex;flex-direction:column;cursor:pointer;transition:transform .25s ease,box-shadow .25s ease,border .25s ease;border:1px solid #f2e8f7;position:relative;}
     .product-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,.15);border-color:#f8b4d9;}
     .product-image-wrap{position:relative;width:100%;padding-top:115%;overflow:hidden;background:#f7fafc;}
     .product-image-wrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}
     .product-card:hover .product-image-wrap img{transform:scale(1.05);}
-    
     .new-badge{position:absolute;top:12px;right:12px;background:linear-gradient(45deg,#ff6b9d,#ff8fb2);color:white;padding:4px 10px;border-radius:12px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;box-shadow:0 4px 12px rgba(255,107,157,.4);z-index:2;animation:pulse 2s infinite;}
     @keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.05);}}
-    
     .product-info{padding:14px 16px 16px;display:flex;flex-direction:column;gap:8px;}
     .product-title{font-size:14px;font-weight:600;min-height:38px;}
     .product-meta{font-size:11px;text-transform:uppercase;letter-spacing:.18em;color:#a0aec0;}
@@ -50,9 +45,8 @@
     .product-btn:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(255,75,139,.4);opacity:.95;}
 
     /* Disclaimer Section Styling */
-    .disclaimer-section{background:rgba(255,255,255,0.6);border:1px solid #f8b4d9;border-radius:24px;padding:40px;margin-bottom:60px;font-size:13px;line-height:1.6;color:#4a5568;}
+    .disclaimer-section{background:rgba(255,255,255,0.6);border:1px solid #f8b4d9;border-radius:24px;padding:40px;margin:40px 0 60px;font-size:13px;line-height:1.6;color:#4a5568;}
     .disclaimer-section h2{font-size:18px;margin-bottom:15px;color:#c53078;text-transform:uppercase;letter-spacing:0.1em;}
-    .disclaimer-section p{margin-bottom:15px;}
     .disclaimer-list{padding-left:20px;}
     .disclaimer-list li{margin-bottom:12px;padding-left:5px;}
     .disclaimer-list li strong{color:#2d3748;}
@@ -68,18 +62,11 @@
     .modal-note{font-size:12px;color:#718096;margin-bottom:16px;}
     .modal-btn{width:100%;padding:11px 16px;border-radius:999px;border:none;background:linear-gradient(90deg,#ff4b8b,#ff7aa2);color:#fff;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;transition:transform .2s ease,box-shadow .2s ease,opacity .2s ease;}
     .modal-btn:hover{transform:translateY(-1px);box-shadow:0 12px 26px rgba(255,75,139,.45);opacity:.96;}
-    
     footer{background:#111827;color:#e5e7eb;padding:20px 0 26px;font-size:12px;margin-top:12px;}
     .footer-inner{text-align:center;}
     .footer-pattern{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#4b5563;margin-bottom:6px;}
     .footer-text{color:#9ca3af;max-width:520px;margin:0 auto;}
-    
-    @media(max-width:768px){
-      .header-inner{flex-direction:column;align-items:flex-start;gap:8px;}
-      .header-right{align-self:stretch;justify-content:flex-end;width:100%;gap:6px;}
-      .hero-title{font-size:26px;}
-      .disclaimer-section{padding:20px;margin:0 10px 40px;}
-    }
+    @media(max-width:768px){.header-inner{flex-direction:column;align-items:flex-start;gap:8px;}.header-right{align-self:stretch;justify-content:flex-end;width:100%;gap:6px;}.hero-title{font-size:26px;}.disclaimer-section{padding:20px;margin:20px 10px 40px;}}
   </style>
 </head>
 <body>
@@ -92,7 +79,7 @@
         </div>
         <div class="header-right">
           <div class="pill-pattern">• curated • limited • select •</div>
-          <a href="#disclaimer" class="social-btn">Legal</a>
+          <a href="#disclaimer" class="social-btn">Legal Info</a>
           <a href="https://www.instagram.com/pixelperfecttoys/" target="_blank" class="social-btn">Instagram</a>
           <a href="https://x.com/pixelperfecttoy" target="_blank" class="social-btn x-btn">X.com</a>
         </div>
@@ -125,16 +112,14 @@
     <div class="disclaimer-section">
       <h2>Disclaimer & Terms of Use</h2>
       <p>This disclaimer applies to the website <strong>PixelPerfectToys</strong> (the "Website"). By accessing or using this Website, you agree to be bound by the following terms. If you do not agree, please do not use the Website.</p>
-      
       <ol class="disclaimer-list">
-        <li><strong>No Warranties:</strong> All information, product descriptions, images, and content on this Website are provided "as is" without any warranties, express or implied. PixelPerfectToys makes no representations about the accuracy, completeness, or suitability of the content for any purpose. Products may vary slightly from images shown.</li>
-        <li><strong>Limitation of Liability:</strong> PixelPerfectToys shall not be liable for any direct, indirect, incidental, special, or consequential damages arising from the use of or inability to use this Website, products, or any linked sites.</li>
-        <li><strong>Not Responsible for User Actions:</strong> Parents or guardians are solely responsible for supervising children's use of toys purchased from this Website. PixelPerfectToys does not endorse or guarantee safety for all age groups or uses.</li>
-        <li><strong>Third-Party Links and Ads:</strong> Any links to external websites or advertisements (including Amazon affiliate links) are provided for convenience only. PixelPerfectToys is not responsible for the content, privacy practices, or availability of these sites.</li>
-        <li><strong>Intellectual Property:</strong> All content on this Website, including text, graphics, logos, and images, is the property of PixelPerfectToys or its licensors and protected by copyright laws. Unauthorized use is strictly prohibited.</li>
-        <li><strong>Amazon Affiliate Disclosure:</strong> As an Amazon Associate, PixelPerfectToys earns from qualifying purchases. Links to Amazon products may generate commissions at no additional cost to you.</li>
-        <li><strong>Changes to Disclaimer:</strong> PixelPerfectToys reserves the right to modify this disclaimer at any time. Continued use of the Website constitutes acceptance of changes.</li>
-        <li><strong>Governing Law:</strong> This disclaimer is governed by the laws of India. Any disputes shall be subject to the exclusive jurisdiction of courts in New Delhi.</li>
+        <li><strong>No Warranties:</strong> All information, product descriptions, images, and content on this Website are provided "as is" without any warranties. PixelPerfectToys makes no representations about the accuracy, completeness, or suitability of the content. Products may vary slightly from images shown.</li>
+        <li><strong>Limitation of Liability:</strong> PixelPerfectToys shall not be liable for any direct, indirect, or consequential damages arising from the use of this Website or any products purchased via third-party links.</li>
+        <li><strong>User Responsibility:</strong> Parents or guardians are solely responsible for supervising the use of products purchased via this Website. We do not personally guarantee safety certifications for all age groups.</li>
+        <li><strong>Third-Party Links:</strong> Any links to external websites (including Amazon affiliate links) are provided for convenience. We are not responsible for the content, privacy practices, or availability of these external sites.</li>
+        <li><strong>Intellectual Property:</strong> All site content, including text and graphics, is the property of PixelPerfectToys or its licensors and is protected by applicable copyright laws.</li>
+        <li><strong>Amazon Affiliate Disclosure:</strong> As an Amazon Associate, PixelPerfectToys earns from qualifying purchases. Links to products may generate commissions at no additional cost to you.</li>
+        <li><strong>Modifications:</strong> PixelPerfectToys reserves the right to modify this disclaimer at any time without prior notice.</li>
       </ol>
     </div>
   </section>
@@ -189,7 +174,6 @@
 
     function isNewProduct(product){if(!product.addedDate)return false;const addedDate=new Date(product.addedDate),now=new Date();return(now-addedDate)/(1000*60*60*24)<=45;}
     function sortProducts(products){return products.sort((a,b)=>{const aIsNew=isNewProduct(a),bIsNew=isNewProduct(b);return aIsNew&&!bIsNew?-1:!aIsNew&&bIsNew?1:0;});}
-
     function openPreview(imageUrl,title,amazonLink){
       document.getElementById("previewImage").src=imageUrl;
       document.getElementById("previewTitle").textContent=title;
@@ -197,12 +181,10 @@
       document.getElementById("previewModal").style.display="flex";
       document.body.style.overflow="hidden";
     }
-
     function closePreview(){
       document.getElementById("previewModal").style.display="none";
       document.body.style.overflow="auto";
     }
-
     function renderProductCard(product){
       const{ name,image,link,meta }=product,isNew=isNewProduct(product),card=document.createElement("div");
       card.className="product-card";card.onclick=()=>openPreview(image,name,link);
@@ -212,17 +194,15 @@
       imgWrap.appendChild(img);
       const info=document.createElement("div");info.className="product-info";
       const title=document.createElement("div");title.className="product-title";title.textContent=name;
-      const metaEl=document.createElement("div");metaEl.textContent=meta||"NEW • ADDED";metaEl.className="product-meta";
+      const metaEl=document.createElement("div");metaEl.className="product-meta";metaEl.textContent=meta||"NEW • ADDED";
       const btn=document.createElement("a");btn.href=link;btn.target="_blank";btn.className="product-btn";btn.textContent="View on Amazon";
       info.appendChild(title);info.appendChild(metaEl);info.appendChild(btn);
       card.appendChild(imgWrap);card.appendChild(info);return card;
     }
-
     function loadProducts(){
       const grid=document.getElementById("productsGrid");grid.innerHTML="";
       sortProducts([...baseProducts]).forEach(product=>grid.appendChild(renderProductCard(product)));
     }
-
     loadProducts();setInterval(loadProducts,60*60*1000);
     window.addEventListener("click",e=>{e.target.id==="previewModal"&&closePreview()});
     window.addEventListener("keydown",e=>{e.key==="Escape"&&closePreview()});
